@@ -1,28 +1,39 @@
-/* Zona 1: Importaciones */
+//Zona 1, IMPORTACIONES
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import React,{useState} from 'react';
 
-const Texto = (props) => {
-  const {contenido}=props;
+const Texto=() => {
+  const [contenido,setContenido]=useState("Hola Mundo, React Native");
+  const actualizaTexto=()=>{setContenido("Texto actualizado");}
   return (
-    <Text>{contenido}</Text>
-  )
-};
+    <Text onPress={actualizaTexto}>{contenido}</Text>
+  );
+}
 
-/* Zona 2: Main */
+
+// Zona 2, MAIN (ejecucuión del programa)
 export default function App() {
   return (
     <View style={styles.container}>
-      <Texto contenido="hola"></Texto>
-      <Texto contenido="mundo"></Texto>
-      <Texto contenido="desde React Native"></Texto>
-      <Button title="Presioname"></Button>
+
+
+      <Texto></Texto>
+      <Texto></Texto>
+      <Texto></Texto>
+      <Texto></Texto>
+      <Text>Hola Mundo, React Native</Text>
+      <Button title="Tlabaja"></Button>
+       
       <StatusBar style="auto" />
     </View>
   );
 }
 
-/* Zona 3: Estética */
+
+
+//Zona 3 CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,
