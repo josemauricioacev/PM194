@@ -4,12 +4,12 @@
     "slug": "my-blank",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/splash-icon.png",
+    "icon": "./assets/cr7.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
+      "image": "./assets/cr7.jpg",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
@@ -17,13 +17,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/cr7.jpg",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/splash-icon.png"
+      "favicon": "./assets/cr7.jpg"
     },
     "plugins": [
       "expo-splash-screen"

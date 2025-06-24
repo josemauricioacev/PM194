@@ -1,92 +1,44 @@
-// Zona 1, IMPORTACIONES
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
-// Zona 2, MAIN (ejecución del programa)
+SplashScreen.preventAutoHideAsync();
+
 export default function App() {
-  const [nombre, setNombre] = useState('');
-  const [password, setPassword] = useState('');
-  const [comments, setComments] = useState('');
-  const [age, setAge] = useState('');
+  const [appReady, setAppReady] = useState(false);
 
-  // Mostrar alerta con validación
-  const showAlert = () => {
-    if (nombre.trim() === '' || password.trim() === '' || age.trim() === '') {
-      window.alert('Por favor, completa todos los campos obligatorios.');
-    } else {
-      window.alert(`Nombre: ${nombre}\nContraseña: ${password}\nEdad: ${age}\nComentarios: ${comments}`);
-    }
-  };
-
-  // Limpiar todos los campos
-  const limpiarCampos = () => {
-    setNombre('');
-    setPassword('');
-    setComments('');
-    setAge('');
-  };
+  useEffect(() => {
+    setTimeout(async () => {
+      setAppReady(true);
+      await SplashScreen.hideAsync();
+    }, 2000);
+  }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.label}>Nombre:</Text>
-      <TextInput 
-        style={styles.input} 
-        placeholder="Escribe tu nombre" 
-        value={nombre} 
-        onChangeText={setNombre} 
-      />
-
-      <Text style={styles.label}>Contraseña:</Text>
-      <TextInput 
-        style={styles.input} 
-        placeholder="Escribe tu contraseña" 
-        value={password} 
-        onChangeText={setPassword} 
-        secureTextEntry={true} 
-      />
-
-      <Text style={styles.label}>Edad:</Text>
-      <TextInput 
-        style={styles.input} 
-        placeholder="Escribe tu edad" 
-        value={age} 
-        onChangeText={setAge} 
-        keyboardType="numeric" 
-      />
-
-      <Text style={styles.label}>Comentarios:</Text>
-      <TextInput 
-        style={[styles.input, styles.textArea]} 
-        placeholder="Escribe tus comentarios" 
-        value={comments} 
-        onChangeText={setComments} 
-        multiline={true} 
-        numberOfLines={4} 
-        textAlignVertical="top" 
-      />
-
-      <Text style={styles.label}>Campo de alerta (solo lectura):</Text>
-      <TextInput 
-        style={styles.input} 
-        value="Este campo es solo de lectura" 
-        editable={false} 
-      />
-
-      <View style={styles.buttonContainer}>
-        <Button 
-          title="Aceptar" 
-          onPress={showAlert} 
-        />
+    <ImageBackground
+      source={require('./assets/cr7.jpg')} // Cambiado a cr7.jpg
+      style={styles.background}
+      resizeMode="cover" // Asegura que la imagen se ajuste al contenedor
+    >
+      <View style={styles.container}>
+        <Text style={styles.label}>Bienvenido a mi App:</Text>
+        <Text style={styles.subtitle}>
+          {appReady ? 'Carga completa' : 'Cargando...'}
+        </Text>
       </View>
-    </ScrollView>
+    </ImageBackground>
   );
 }
 
-// Zona 3, ESTILOS y CSS (lo bonito)
 const styles = StyleSheet.create({
+  background: {
+    flex: 1, // Ocupa todo el espacio disponible
+    width: '100%', // Asegura que la imagen ocupe el ancho completo
+    height: '100%', // Asegura que la imagen ocupe el alto completo
+  },
   container: {
     flexGrow: 1,
-    backgroundColor: '#d3d3d3',
+    backgroundColor: 'rgba(211, 211, 211, 0.8)', // Fondo semitransparente para que la imagen sea visible
     padding: 20,
     alignItems: 'stretch',
     justifyContent: 'center',
@@ -96,18 +48,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: '#333',
   },
-  input: {
-    borderWidth: 1,
-    borderColor: '#999',
-    borderRadius: 5,
-    padding: 10,
-    backgroundColor: '#fff',
-    marginBottom: 10,
-  },
-  textArea: {
-    height: 100,
-  },
-  buttonContainer: {
-    marginTop: 10,
+  subtitle: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 5,
   },
 });
