@@ -1,33 +1,116 @@
-import * as SplashScreen from 'expo-splash-screen';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-
-SplashScreen.preventAutoHideAsync();
+import { StyleSheet, View, Text, ImageBackground, ScrollView } from "react-native";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [appReady, setAppReady] = useState(false);
-
-  useEffect(() => {
-    setTimeout(async () => {
-      setAppReady(true);
-      await SplashScreen.hideAsync();
-    }, 2000);
-  }, []);
-
-  return (
-    <ImageBackground
-      source={require('./assets/cr7.jpg')} // Cambiado a cr7.jpg
-      style={styles.background}
-      resizeMode="cover" // Asegura que la imagen se ajuste al contenedor
-    >
-      <View style={styles.container}>
-        <Text style={styles.label}>Bienvenido a mi App:</Text>
-        <Text style={styles.subtitle}>
-          {appReady ? 'Carga completa' : 'Cargando...'}
-        </Text>
-      </View>
-    </ImageBackground>
-  );
+  return(
+    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+      <Text>Hola Mundo</Text>
+    </ScrollView>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -38,9 +121,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flexGrow: 1,
-    backgroundColor: 'rgba(211, 211, 211, 0.8)', // Fondo semitransparente para que la imagen sea visible
+    backgroundColor: 'rgba(174, 25, 25, 0.8)', // Fondo semitransparente para que la imagen sea visible
     padding: 20,
-    alignItems: 'stretch',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   label: {
