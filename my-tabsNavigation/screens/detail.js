@@ -1,12 +1,13 @@
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Home() {
+export default function Detail({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.iconRow}>
-        <Ionicons name="home-outline" size={60} color="red" />
-        <Text style={styles.title}>Bienvenido a Home</Text>
+        <Text style={styles.title}>Detalles Usuario</Text>
+        <Text style={styles.subtitle}>Usando Navegacion Stack</Text>
       </View>
     </View>
   );
@@ -15,7 +16,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -25,9 +26,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 20,
-    color: 'red',
+    color: '#333',
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#007AFF',
+    fontWeight: '500',
   },
 });

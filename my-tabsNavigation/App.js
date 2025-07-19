@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import Home from './screens/home';
-import Profile from './screens/profile';
+import ProfileStack from './navigation/ProfileStack';
 import Settings from './screens/settings';
 
 const Tab = createBottomTabNavigator();
@@ -39,19 +38,10 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Profile" component={ProfileStack} />
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
