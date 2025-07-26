@@ -6,7 +6,7 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.iconRow}>
         <Ionicons name="home-outline" size={60} color="red" />
-        <Text style={styles.title}>Bienvenido a Home</Text>
+        <Text style={styles.title}>Bienvenido a Home de Pepe</Text>
       </View>
     </View>
   );

@@ -1,13 +1,16 @@
 {
   "expo": {
     "name": "my-tabsNavigation",
-    "slug": "my-tabsNavigation",
+    "slug": "my-tabsnavigation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -21,10 +24,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package": "com.yourname.mytabsnavigation",
       "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6bcb73c4-3746-4a6b-8d1f-6831bc53ab4b"
+      }
     }
   }
 }
